@@ -34,8 +34,9 @@ class Screenshot():#截取手机屏幕并保存到电脑
 
 
 for i in range(4349,10000):
-    cmd1=r"adb shell /system/bin/screencap -p /sdcard/lovejingjing" + str(i) +".png"      #命令1：在手机上截图3.png为图片名
-    cmd2=r"adb pull /sdcard/lovejingjing" + str(i) + ".png /Users/Jam/Desktop/love"                        #命令2：将图片保存到电脑 d:/3.png为要保存到电脑的路径
+    cmd1=r"adb shell /system/bin/screencap -p /sdcard/your_fold_name" + str(i) +".png"      #命令1：在手机上截图3.png为图片名
+    cmd2=r"adb pull /sdcard/your_fold_name" + str(i) + ".png /Users/user/Desktop/your_fold_name"                        
+    #命令2:这是Mac上的存储路径，如果是windows将图片保存到电脑 d:/3.png,如果是硬盘里，为/Volumes/photo/your_fold_name
     screen=Screenshot()
     screen.screen(cmd1)
     screen.saveComputer(cmd2)
