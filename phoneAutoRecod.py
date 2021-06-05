@@ -34,14 +34,14 @@ class Screenshot():#截取手机屏幕并保存到电脑
 
 
 for i in range(4349,10000):
-    cmd1=r"adb shell /system/bin/screencap -p /sdcard/your_fold_name" + str(i) +".png"      #命令1：在手机上截图3.png为图片名
-    cmd2=r"adb pull /sdcard/your_fold_name" + str(i) + ".png /Users/user/Desktop/your_fold_name"                        
-    #命令2:这是Mac上的存储路径，如果是windows将图片保存到电脑 d:/3.png,如果是硬盘里，为/Volumes/photo/your_fold_name
+    cmd1=r"adb shell /system/bin/screencap -p /sdcard/your_file_name" + str(i) +".png"      #命令1：在手机上截图3.png为图片名
+    cmd2=r"adb pull /sdcard/your_file_name" + str(i) + ".png /Users/user/Desktop/your_file_name"                        
+    #命令2:这是Mac上的存储路径，如果是windows将图片保存到电脑 d:/3.png,如果是硬盘里，为/Volumes/photo/your_file_name
     screen=Screenshot()
     screen.screen(cmd1)
     screen.saveComputer(cmd2)
     time.sleep(1);
     print("输出第"+str(i)+"张")
-    os.system("adb shell rm /sdcard/lovejingjing" + str(i) + ".png")
+    os.system("adb shell rm /sdcard/your_file_name" + str(i) + ".png")
     os.system("adb shell input swipe 250 750 250 500 50")
     time.sleep(1)
